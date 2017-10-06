@@ -11,7 +11,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 	let totalInterest = 0;
 	let loanBalance = loanAmount;
 
-	console.log(`=======================================\nFor payment option of RM${monthyPayment} per month:`)
+	console.log(`=======================================\nFor payment option of RM ${monthyPayment} per month:`)
 
 	for (let i =1; i < months + 1; i++) {
 		// monthly loop
@@ -26,7 +26,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 
 		// end of loan
 		if (loanBalance < 0) {
-			return console.log(`Loan is completed within ${i} months (${roundToTwo(i/12)} years).\nTotal paid is RM${totalPaid}, out of which RM${roundToTwo(totalInterest)} is for interest.`);
+			return console.log(`Loan is completed within ${i} months (${roundToTwo(i/12)} years).\nTotal paid is RM ${totalPaid}, out of which RM ${roundToTwo(totalInterest)} is for interest.`);
 		}
 	};
 }; // function renderProjection
