@@ -26,7 +26,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 
 		// end of loan
 		if (loanBalance < 0) {
-			return console.log(`Loan is completed within ${i} months (${formatNumber(i/12)} years).\nTotal paid is RM ${totalPaid}, out of which RM ${formatNumber(totalInterest)} is for interest.`);
+			return console.log(`Loan is completed within ${i} months (${monthsToText(i)}).\nTotal paid is RM ${totalPaid}, out of which RM ${formatNumber(totalInterest)} is for interest.`);
 		}
 	};
 }; // function renderProjection
@@ -45,6 +45,10 @@ function roundToTwo(num) {
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function monthsToText(months) {
+	return(months / 12 | 0) + " years and " + months % 12 +" months"
 }
 
 function formatNumber(x) {
