@@ -26,7 +26,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 
 		// end of loan
 		if (loanBalance < 0) {
-			return console.log(`Loan is completed within ${i} months (${i/12} years).\nTotal paid is RM${totalPaid}, out of which RM${Math.round(totalInterest)} is for interest.`);
+			return console.log(`Loan is completed within ${i} months (${roundToTwo(i/12)} years).\nTotal paid is RM${totalPaid}, out of which RM${roundToTwo(totalInterest)} is for interest.`);
 		}
 	};
 }; // function renderProjection
@@ -36,3 +36,9 @@ let paymentOptions = [540,1000,2000,5000];
 paymentOptions.forEach((paymentOption) => {
 	renderProjection(months, loanAmount, interestRate, paymentOption);
 });
+
+// utils
+
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
