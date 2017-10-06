@@ -11,7 +11,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 	let totalInterest = 0;
 	let loanBalance = loanAmount;
 
-	console.log(`=======================================\nFor payment option of RM ${monthyPayment} per month:`)
+	console.log(`=======================================\nFor payment option of RM ${formatNumber(monthyPayment)} per month:`)
 
 	for (let i =1; i < months + 1; i++) {
 		// monthly loop
