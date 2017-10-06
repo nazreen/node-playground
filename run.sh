@@ -1,0 +1,1 @@
+docker run --rm -ti --name node-playground -v $(pwd):/var/www/app node:8.1 bash
