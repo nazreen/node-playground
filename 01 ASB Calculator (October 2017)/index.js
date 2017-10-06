@@ -1,9 +1,9 @@
 // variables
 let years = 30; console.log(`Loan duration is ${years} years.`);
 let months = years * 12;
-let loanAmount = 100000; console.log(`Loan amount is RM${loanAmount}.`);
+let loanAmount = 100000; console.log(`Loan amount is RM${formatNumber(loanAmount)}.`);
 let interestRate = (4.8/100); console.log(`Interest rate is ${interestRate * 100}%.`);
-let monthyPayment = 540; console.log(`Monthly payment is RM${monthyPayment}.`);
+let monthyPayment = 540; console.log(`Monthly payment is RM ${monthyPayment}.`);
 
 // yearly loop
 function renderProjection (months, loanAmount, interestRate, monthyPayment) {
@@ -11,7 +11,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 	let totalInterest = 0;
 	let loanBalance = loanAmount;
 
-	console.log(`=======================================\nFor payment option of RM ${formatNumber(monthyPayment)} per month:`)
+	console.log(`\n=======================================\nFor payment option of RM ${formatNumber(monthyPayment)} per month:`)
 
 	for (let i =1; i < months + 1; i++) {
 		// monthly loop
