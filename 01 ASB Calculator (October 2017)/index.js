@@ -26,7 +26,7 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 
 		// end of loan
 		if (loanBalance < 0) {
-			return console.log(`Loan is completed within ${i} months (${monthsToText(i)}).\nTotal paid is RM ${totalPaid}, out of which RM ${formatNumber(totalInterest)} is for interest.`);
+			return console.log(`Loan is completed within ${i} months (${monthsToText(i)}).\nTotal paid is RM ${formatNumber(totalPaid)}, out of which RM ${formatNumber(totalInterest)} is for interest.`);
 		}
 	};
 }; // function renderProjection
