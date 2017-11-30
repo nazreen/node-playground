@@ -1,28 +1,27 @@
 // variables
-let years = 30; console.log(`Loan duration is ${years} years.`);
+let years = 30;
 let months = years * 12;
-let loanAmount = 100000; console.log(`Loan amount is RM${formatNumber(loanAmount)}.`);
-let interestRate = (4.8/100); console.log(`Interest rate is ${interestRate * 100}%.`);
-let monthyPayment = 540; console.log(`Monthly payment is RM ${monthyPayment}.`);
+let loanAmount = 100000;
+let interestRate = (4.8/100);
 
 // yearly loop
-function renderProjection (months, loanAmount, interestRate, monthyPayment) {
+function renderProjection (months, loanAmount, interestRate, monthlyPayment) {
 	let totalPaid = 0;
 	let totalInterest = 0;
 	let loanBalance = loanAmount;
 
-	console.log(`\n=======================================\nFor payment option of RM ${formatNumber(monthyPayment)} per month:`)
+	console.log(`\n=======================================\nFor payment option of RM ${formatNumber(monthlyPayment)} per month:`)
 
 	for (let i =1; i < months + 1; i++) {
 		// monthly loop
 
-		totalPaid += monthyPayment;
+		totalPaid += monthlyPayment;
 		currentInterest = (loanBalance * interestRate)/12;
 		totalInterest += currentInterest;
-		loanBalance = (loanBalance - monthyPayment) + currentInterest;
+		loanBalance = (loanBalance - monthlyPayment) + currentInterest;
 
 		// log the monthly details
-		// console.log(`month ${i} | payment: RM${monthyPayment} | interest: RM${Math.round(currentInterest)} |remaining: ${loanBalance}/${loanAmount}`);
+		// console.log(`month ${i} | payment: RM${monthlyPayment} | interest: RM${Math.round(currentInterest)} |remaining: ${loanBalance}/${loanAmount}`);
 
 		// end of loan
 		if (loanBalance < 0) {
@@ -30,6 +29,10 @@ function renderProjection (months, loanAmount, interestRate, monthyPayment) {
 		}
 	};
 }; // function renderProjection
+
+console.log(`\nLoan duration is ${years} years.`);
+console.log(`Loan amount is RM${formatNumber(loanAmount)}.`);
+console.log(`Interest rate is ${interestRate * 100}%.`);
 
 let paymentOptions = [540,1000,2000,5000];
 
